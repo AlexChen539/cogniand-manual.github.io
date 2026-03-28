@@ -1,0 +1,15 @@
+{
+  "name": "cogniand-manual",
+  "version": "1.0.0",
+  "description": "CogniAND心理学实验平台使用手册",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "dependencies": {
+    "vitepress": "^1.5.0"
+  },
+  "author": "CogniAND Team",
+  "license": "ISC"
+}
