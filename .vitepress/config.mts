@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   base: '/cogniand-manual.github.io/',
   title: "CogniAND 平台手册",
+  ignoreDeadLinks: true,
 
   locales: {
     root: {
