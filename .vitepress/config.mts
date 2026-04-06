@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: '/cogniand-manual.github.io/',
+  base: '/',
   title: "CogniAND 平台手册",
   ignoreDeadLinks: true,
 
