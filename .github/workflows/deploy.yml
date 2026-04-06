@@ -1,37 +1,37 @@
-name: Deploy VitePress site to GitHub Pages
+name: Deploy VitePress to GitHub Pages
 
 on:
   push:
     branches:
-      - main
-  workflow_dispatch:
-
-permissions:
-  contents: write
+      - main  # 默认分支，可以修改为你自己的分支名
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+    # Checkout the repository
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-          cache: npm
+    # Setup Node.js
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'  # 使用 Node 18，与你的项目 Node 版本一致
 
-      - name: Install dependencies
-        run: npm ci
+    # Install dependencies
+    - name: Install dependencies
+      run: npm ci  # 这会安装 package-lock.json 中的依赖
 
-      - name: Build VitePress site
-        run: npm run build
+    # Build the project
+    - name: Build the site
+      run: npm run build  # 构建 VitePress 网站
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .vitepress/dist
+    # Deploy the build to GitHub Pages
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        publish_dir: './docs/.vitepress/dist'  # VitePress 默认的构建目录
+        github_token: ${{ secrets.GITHUB_TOKEN }}  # 自动获取 GitHub token 进行部署
+        destination_dir: ''  # 将构建文件部署到根目录
