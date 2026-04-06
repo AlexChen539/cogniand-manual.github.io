@@ -1,1 +1,0 @@
-import{_ as s,o as i,c as e,ae as n}from"./chunks/framework.CB71nIlf.js";const u=JSON.parse('{"title":"CogniAND 平台手册","description":"","frontmatter":{},"headers":[],"relativePath":"README.md","filePath":"README.md"}'),l={name:"README.md"};function t(o,a,p,r,h,d){return i(),e("div",null,[...a[0]||(a[0]=[n("",35)])])}const k=s(l,[["render",t]]);export{u as __pageData,k as default};
